@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yyx.zookeeper.lock.dao.OrderDao">
+    <resultMap id="order" type="com.yyx.zookeeper.lock.po.OrderPo">
+        <id column="id" property="id" javaType="java.lang.Integer"/>
+        <result column="product_name" property="productName" javaType="java.lang.String"/>
+        <result column="version" property="version" javaType="java.lang.Integer"/>
+        <result column="stock" property="stock" javaType="java.lang.Integer"/>
+    </resultMap>
+    <insert id="addOrder" useGeneratedKeys="true" keyProperty="id" parameterType="com.yyx.zookeeper.lock.po.OrderPo">
+        insert into order(pid,user_id) values
+        #{pid},#{userId}
+    </insert>
+</mapper>
