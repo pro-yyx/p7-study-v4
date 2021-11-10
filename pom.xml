@@ -12,6 +12,7 @@
         <module>mysql</module>
         <module>concurrent</module>
         <module>distribute</module>
+        <module>distribute-rpc-demo</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -56,6 +57,11 @@
         <mybatis-plus-boot.version>3.0.5</mybatis-plus-boot.version>
         <spring-jdbc.version>5.2.8.RELEASE</spring-jdbc.version>
         <netty.version>4.1.50.Final</netty.version>
+        <commons-io.version>2.11.0</commons-io.version>
+        <okHttp.version>4.9.1</okHttp.version>
+        <springboot-dubbo.version>2.7.5</springboot-dubbo.version>
+        <dubbo-zookeeper.version>2.7.13</dubbo-zookeeper.version>
+        <dubbo.version>2.7.5</dubbo.version>
     </properties>
 
 
@@ -81,10 +87,20 @@
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
         </dependency>
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+        </dependency>
     </dependencies>
 
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>commons-io</groupId>
+                <artifactId>commons-io</artifactId>
+                <version>${commons-io.version}</version>
+            </dependency>
+
             <dependency>
                 <groupId>org.slf4j</groupId>
                 <artifactId>slf4j-log4j12</artifactId>
@@ -259,6 +275,24 @@
                 <version>${netty.version}</version>
             </dependency>
             <!--netty end-->
+            <!--dubbo start-->
+            <dependency>
+                <groupId>com.squareup.okhttp3</groupId>
+                <artifactId>okhttp</artifactId>
+                <version>${okHttp.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.dubbo</groupId>
+                <artifactId>dubbo-spring-boot-starter</artifactId>
+                <version>${springboot-dubbo.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.dubbo</groupId>
+                <artifactId>dubbo</artifactId>
+                <version>${dubbo.version}</version>
+            </dependency>
+
+            <!--dubbo end-->
         </dependencies>
     </dependencyManagement>
 

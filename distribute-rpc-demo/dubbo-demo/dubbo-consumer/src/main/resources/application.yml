@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: dubbo-consumer-nemo
+server:
+  port: 8082
+
+dubbo:
+  registry:
+    address: zookeeper://192.168.89.4:2181
+    timeout: 25000
+  config-center:
+    timeout: 25000

@@ -203,6 +203,12 @@
             <artifactId>netty-all</artifactId>
         </dependency>
         <!--netty end-->
+        <!--duubo start-->
+        <dependency>
+            <groupId>com.squareup.okhttp3</groupId>
+            <artifactId>okhttp</artifactId>
+        </dependency>
+        <!--duubo end-->
 
     </dependencies>
 
